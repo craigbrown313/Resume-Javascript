@@ -4,7 +4,7 @@ var bio = {
     "contacts": {
         "mobile": "333-333-3333",
         "email": "craigbrown313@gmail.com",
-        "github": "Craig",
+        "github": "https://github.com/craigbrown313",
         "location": "Cincinnati, OH, United States"
 
     },
