@@ -58,7 +58,7 @@ var work = {
         {
             "employer": "Edis Group",
             "title": "Executive IT Recruiter",
-            "dates": "january 2000",
+            "dates": "April 2016 to August 2017",
             "description": "Full life cycle recruiting for all Information Technology and specialized related positions "+
             "Utilized best practices to source, and meet candidates. Considered responsible by means of set up selecting "+
             "measurements: time to fill, cost per contract, nature of contract, client administration amid contract with "+
