@@ -7,8 +7,9 @@ var bio = {
         "github": "https://github.com/craigbrown313",
         "location": "Cincinnati, OH, United States"
 
+
     },
-    "welcomeMessage": "I am currently seeking entr-lelvel employment in Web Development in the Cincinnati "+
+    "welcomeMessage": "I am currently seeking entry-lelvel employment in Web Development in the Cincinnati "+
     "market. I have spent the last 6 months honing my skills in the Udacity front-end web development course "+
     "where I have gained great expeireince thoughout my classes and projects. I am now ready to take my "+
     "skills to the next level to add immediate value in the corporate world.",
@@ -32,7 +33,7 @@ var education = {
             "degree": "Bachelors",
             "majors": "Business",
             "dates": 2017,
-            "url": "www.ccuniversity.edu"
+            "url": "http://ccuniversity.edu/"
         }
     ],
     "onlineCourses": [{
@@ -66,10 +67,6 @@ var work = {
             "all through the enlisting procedure, giving point-by-point evaluations of all hopefuls sourced. Complete "+
             "uncommon selecting related undertakings for the HR and IT Departments as required.",
             "location": "Cincinnati, Ohio, United States"
-
-
-
-
         }
     ]
 };
@@ -85,7 +82,7 @@ var projects = {
         "title": "Online Portfolio",
         "dates": "August 2017",
         "description": "Created an online portfolio using HTML5, CSS3, and Bootstrap as an project for responsive web design.",
-        "images": ["images/web.png"]
+        "images": ["images/responsive.png"]
     }
 
 
@@ -104,8 +101,7 @@ bio.display = function() {
 
     var formattedContactInfo = [];
     formattedContactInfo.push(HTMLemail.replace("%data%", bio.contacts.email));
-    formattedContactInfo.push(HTMLgithub.replace("%data%", bio.contacts.github));
-    formattedContactInfo.push(HTMLtwitter.replace("%data%", bio.contacts.twitter));
+    formattedContactInfo.push(HTMLgithub.replace("%data%",  bio.contacts.github));
     formattedContactInfo.push(HTMLlocation.replace("%data%", bio.contacts.location));
 
     $('#topContacts, #footerContacts').append(formattedContactInfo);
@@ -216,5 +212,7 @@ education.display = function() {
 };
 
 education.display();
+
+
 
 $("#mapDiv").append(googleMap);
