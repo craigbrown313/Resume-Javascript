@@ -76,7 +76,7 @@ var projects = {
         "title": "JavaScript Frogger Game",
         "dates": "August 2017",
         "description": "Created an online game using JavaScript Object-Oriented programming and HTML5 Canvas as part of Udacity's Front-End Web Developer Nanodegree.",
-        "images": ["images/frogger.png"]
+        "images": ["images/frogger.jpg"]
     },
     {
         "title": "Online Portfolio",
