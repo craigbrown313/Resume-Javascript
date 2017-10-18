@@ -74,18 +74,32 @@ var work = {
 var projects = {
     "projects": [{
         "title": "JavaScript Frogger Game",
-        "dates": "August 2017",
+        "datesWorked": "March 2017 - August 2017",
         "description": "Created an online game using JavaScript Object-Oriented programming and HTML5 Canvas as part of Udacity's Front-End Web Developer Nanodegree.",
-        "images": ["images/frogger.jpg"]
+        "images": ["images/frogger.jpg"],
+        "url": "https://arcade-1fcce.firebaseapp.com/",
+        "link": "Github",
+        "link1": "https://github.com/craigbrown313/Arcade"
+
     },
     {
         "title": "Online Portfolio",
-        "dates": "August 2017",
+        "datesWorked": "March 2017 - August 2017",
         "description": "Created an online portfolio using HTML5, CSS3, and Bootstrap as an project for responsive web design.",
-        "images": ["images/responsive.png"]
+        "images": ["images/responsive.png"],
+        "url": "https://craigbrown313.github.io/responsive1/",
+        "link": "Github",
+        "link1": "https://craigbrown313.github.io/responsive1/"
+    },
+    {
+        "title": "Resume w/React",
+        "datesWorked": "March 2017 - August 2017",
+        "description": "Developed an interactive resume utiizing React to build out componets to target my projects, work experince and education.",
+        "images": ["images/resume.jpg"],
+        "url": "https://calm-sea-89957.herokuapp.com/,",
+        "link": "Github",
+        "link1": "https://github.com/craigbrown313/Arcade"
     }
-
-
 ]
 };
 
@@ -150,26 +164,32 @@ work.display = function() {
 work.display();
 
 projects.display = function() {
-    if (projects.projects.length > 0) {
-        for (var i = 0, iLen = projects.projects.length; i < iLen; i++) {
-            var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title);
-            var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[i].dates);
-            var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
+	if(projects.projects.length > 0) {
+		for(i in projects.projects) {
+			$("#projects").append(HTMLprojectStart);
 
-            $('#projects').append(HTMLprojectStart);
-            $('.project-entry:last').append(formattedTitle);
-            $('.project-entry:last').append(formattedDates);
-            $('.project-entry:last').append(formattedDescription);
+			var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title).replace("#", projects.projects[i].url);
+      var formattedLink = HTMLprojectTitle.replace("%data%", projects.projects[i].link).replace("#", projects.projects[i].link1);
+      var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[i].datesWorked);
+			var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
 
-            for (var t = 0, tLen = projects.projects[i].images.length; t < tLen; t++) {
-                var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[i].images[t]);
 
-                $('.project-entry:last').append(formattedImage);
-            }
-        }
-    }
-};
 
+			$(".project-entry:last").append(formattedProjectTitle);
+      $(".project-entry:last").append(formattedLink);
+			$(".project-entry:last").append(formattedProjectDates);
+			$(".project-entry:last").append(formattedProjectDescription);
+
+
+			for(img in projects.projects[i].images) {
+				var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[i].images[img]);
+				$(".project-entry:last").append(formattedProjectImage);
+			}
+
+
+		}
+	}
+}
 
 projects.display();
 
