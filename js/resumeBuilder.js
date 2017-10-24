@@ -9,7 +9,7 @@ var bio = {
 
 
     },
-    "welcomeMessage": "I am currently seeking entry-lelvel employment in Web Development in the Cincinnati "+
+    "welcomeMessage": "I am currently seeking entry-level employment in Web Development in the Cincinnati "+
     "market. I have spent the last 6 months honing my skills in the Udacity front-end web development course "+
     "where I have gained great expeireince thoughout my classes and projects. I am now ready to take my "+
     "skills to the next level to add immediate value in the corporate world.",
@@ -53,7 +53,8 @@ var work = {
             "Operated as Information Technology recruiter, scoring candidates involved in the SDLC. Sourced candidates "+
             "for jobs in the technical field with major corporations. Interviewed and prepped candidates for potential "+
             "job openings. Consulted with HR firms on the best possible applicants and salary negotiations.",
-            "location": "Cincinnati, Ohio, United States"
+            "location": "Cincinnati, Ohio, United States",
+            "url":"https://tripleepartners.com/"
 
         },
         {
@@ -66,7 +67,8 @@ var work = {
             "trough and candidate. In charge of counseling with Managers, AVPs, VPs, CIO and proper Human Resource Managers "+
             "all through the enlisting procedure, giving point-by-point evaluations of all hopefuls sourced. Complete "+
             "uncommon selecting related undertakings for the HR and IT Departments as required.",
-            "location": "Cincinnati, Ohio, United States"
+            "location": "Cincinnati, Ohio, United States",
+            "url":"http://edis-group.com/"
         }
     ]
 };
@@ -76,7 +78,7 @@ var projects = {
         "title": "JavaScript Frogger Game",
         "datesWorked": "March 2017 - August 2017",
         "description": "Created an online game using JavaScript Object-Oriented programming and HTML5 Canvas as part of Udacity's Front-End Web Developer Nanodegree.",
-        "images": ["images/frogger.jpg"],
+        "images": ["images/frogger.png"],
         "url": "https://arcade-1fcce.firebaseapp.com/",
         "link": "Github",
         "link1": "https://github.com/craigbrown313/Arcade"
@@ -86,7 +88,7 @@ var projects = {
         "title": "Online Portfolio",
         "datesWorked": "March 2017 - August 2017",
         "description": "Created an online portfolio using HTML5, CSS3, and Bootstrap as an project for responsive web design.",
-        "images": ["images/responsive.png"],
+        "images": ["images/responsive1.png"],
         "url": "https://craigbrown313.github.io/responsive1/",
         "link": "Github",
         "link1": "https://craigbrown313.github.io/responsive1/"
@@ -95,10 +97,10 @@ var projects = {
         "title": "Resume w/React",
         "datesWorked": "March 2017 - August 2017",
         "description": "Developed an interactive resume utiizing React to build out componets to target my projects, work experince and education.",
-        "images": ["images/resume.jpg"],
-        "url": "https://calm-sea-89957.herokuapp.com/,",
+        "images": ["images/resume.png"],
+        "url": "https://still-hamlet-88172.herokuapp.com/,",
         "link": "Github",
-        "link1": "https://github.com/craigbrown313/Arcade"
+        "link1": "https://github.com/craigbrown313/React-Resume"
     }
 ]
 };
@@ -141,7 +143,9 @@ work.display = function() {
 
         for (var job = 0, len = work.jobs.length; job < len; job++) {
             $("#workExperience").append(HTMLworkStart);
-            var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+            var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer).replace("#", work.jobs[job].url)
+
+
             var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
             var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
             $(".work-entry:last").append(formattedWorkLocation);
